@@ -10,7 +10,10 @@ public class JpaMain {
         /* 로딩 시점에 하나만 작성 */
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
 
-        /* 실제 트랜잭션 단위, DB 커넥션을 들고 있음 */
+        /*
+            실제 트랜잭션 단위, DB 커넥션을 들고 있음.
+            매 요청마다 새롭게 생성하고 닫아야 한다. 스레드간 공유하지 말기.
+         */
         EntityManager em = emf.createEntityManager();
 
         EntityTransaction ts = em.getTransaction();
@@ -29,7 +32,7 @@ public class JpaMain {
 
             /* 수정 */
             findMember.setName("update_member");
-            
+
             /* 삭제 */
             findMemeber.remove(findMemeber);
 
