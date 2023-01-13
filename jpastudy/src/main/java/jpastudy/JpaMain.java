@@ -1,4 +1,4 @@
-package hellojpa;
+package jpastudy;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -21,21 +21,27 @@ public class JpaMain {
 
         /* code */
         try{
-            /* 생성 */
+            /* 생성 - 비영속 */
             Member member = new Member();
             member.setId(2L);
             member.setName("member");
+
+            /* 영속, 실제로 DB에 저장되지는 않음. */
             em.persist(member);
 
+            /* 준영속 */
+            em.detach(member);
+
             /* 조회 */
-            Member findMemeber = member.find(Member.class, 1L);
+            Member findMember = em.find(Member.class, 1L);
 
             /* 수정 */
             findMember.setName("update_member");
 
             /* 삭제 */
-            findMemeber.remove(findMemeber);
+            em.remove(findMember);
 
+            /* 영속성 컨텍스트에 있는 값을 기반으로 DB에 쿼리를 날림. */
             ts.commit();
         }
         catch (Exception e){
