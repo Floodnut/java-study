@@ -24,7 +24,8 @@
             <!-- 배치 사이즈 만큼 쿼리를 모아서 DB로 flush, commit 함 -->
             <property name="hibernate.jdbc.batch_size" value="10"/>
 
-            <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+            <!-- DDL 자동 생성 옵션 -->
+            <property name="hibernate.hbm2ddl.auto" value="create" />
         </properties>
     </persistence-unit>
 </persistence>
