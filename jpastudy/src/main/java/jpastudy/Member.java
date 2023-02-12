@@ -5,9 +5,11 @@ import java.util.Date;
 
 @Entity(name = "Member") // JPA에서 관리하기 위한 어노테이션
 @Table(name = "MBR")
+@SequenceGenerator(name = "member_seq_generator", sequenceName = "member_seq") // 시퀀스 제네레이터 생성
 public class Member {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq_generator") //시퀀스 제네레이터 지정
     private Long id;
 
     @Column(name = "name")
