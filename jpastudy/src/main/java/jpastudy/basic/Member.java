@@ -1,4 +1,4 @@
-package jpastudy;
+package jpastudy.basic;
 
 import javax.persistence.*;
 import java.util.Date;

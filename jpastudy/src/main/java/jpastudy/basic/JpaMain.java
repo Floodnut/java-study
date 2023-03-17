@@ -1,4 +1,4 @@
-package jpastudy;
+package jpastudy.basic;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

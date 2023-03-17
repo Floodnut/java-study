@@ -1,4 +1,4 @@
-package jpastudy;
+package jpastudy.basic;
 
 public enum RoleType {
 
