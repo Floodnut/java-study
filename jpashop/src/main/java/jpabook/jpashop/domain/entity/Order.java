@@ -1,4 +1,4 @@
-package jpastudy.domain.entity;
+package jpabook.jpashop.domain.entity;
 
 import java.time.LocalDateTime;
 
@@ -22,12 +22,12 @@ public class Order {
 	/**
 	 * UML에 따른 참조가 잘못 작성 된 것.
 	 * 객체 그래프 탐색이 불가능
-	 **/
-	@Column(name = "MEMBER_ID")
-	private Long memberId;
-
+	**/
 	// @Column(name = "MEMBER_ID")
-	// private Member member;
+	// private Long memberId;
+
+	@Column(name = "MEMBER_ID")
+	private Member member;
 	private LocalDateTime orderDate;
 
 	@Enumerated(EnumType.STRING)
@@ -41,9 +41,9 @@ public class Order {
 		return memberId;
 	}
 
-	// public Member getMember() {
-	// 	return member;
-	// }
+	public Member getMember() {
+		return member;
+	}
 
 	public LocalDateTime getOrderDate() {
 		return orderDate;
@@ -57,13 +57,13 @@ public class Order {
 		this.id = id;
 	}
 
-	// public void setMemberId(Long memberId) {
-	// 	this.memberId = memberId;
-	// }
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
+	}
 
-	// public void setMember(Member member) {
-	// 	this.member = member;
-	// }
+	public void setMember(Member member) {
+		this.member = member;
+	}
 
 	public void setOrderDate(LocalDateTime orderDate) {
 		this.orderDate = orderDate;
